@@ -1,300 +1,100 @@
--- q1-001.sql
  select count(*) from tag, site, question, tag_question where site.site_name='scifi' and tag.name='steins-gate' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-002.sql
  select count(*) from tag, site, question, tag_question where site.site_name='pm' and tag.name='delays' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-003.sql
  select count(*) from tag, site, question, tag_question where site.site_name='diy' and tag.name='rivets' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-004.sql
  select count(*) from tag, site, question, tag_question where site.site_name='softwareengineering' and tag.name='heatmap' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-005.sql
  select count(*) from tag, site, question, tag_question where site.site_name='sharepoint' and tag.name='olap' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-006.sql
  select count(*) from tag, site, question, tag_question where site.site_name='wordpress' and tag.name='simplepie' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-007.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='firebase-util' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-008.sql
  select count(*) from tag, site, question, tag_question where site.site_name='emacs' and tag.name='line-numbers' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-009.sql
  select count(*) from tag, site, question, tag_question where site.site_name='raspberrypi' and tag.name='timekeeping' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-010.sql
  select count(*) from tag, site, question, tag_question where site.site_name='pt' and tag.name='ckeditor' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-011.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='static-allocation' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-012.sql
  select count(*) from tag, site, question, tag_question where site.site_name='serverfault' and tag.name='psql' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-013.sql
  select count(*) from tag, site, question, tag_question where site.site_name='askubuntu' and tag.name='at-command' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-014.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='webpack.config.js' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-015.sql
  select count(*) from tag, site, question, tag_question where site.site_name='electronics' and tag.name='ecg' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-016.sql
  select count(*) from tag, site, question, tag_question where site.site_name='serverfault' and tag.name='discovery' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-017.sql
  select count(*) from tag, site, question, tag_question where site.site_name='superuser' and tag.name='burn-in' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-018.sql
  select count(*) from tag, site, question, tag_question where site.site_name='linguistics' and tag.name='mandarin' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-019.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='python-descriptors' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-020.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='hipi' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-021.sql
  select count(*) from tag, site, question, tag_question where site.site_name='graphicdesign' and tag.name='painting' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-022.sql
  select count(*) from tag, site, question, tag_question where site.site_name='magento' and tag.name='timezone' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-023.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='typekit' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-024.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='containstable' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-025.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='security-context' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-026.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='railsinstaller' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-027.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='long-filenames' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-028.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='appgyver' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-029.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='match-phrase' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-030.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='wordpress-admin' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-031.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='report-viewer2012' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-032.sql
  select count(*) from tag, site, question, tag_question where site.site_name='philosophy' and tag.name='christianity' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-033.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='colorize' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-034.sql
  select count(*) from tag, site, question, tag_question where site.site_name='photo' and tag.name='nikon-d5300' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-035.sql
  select count(*) from tag, site, question, tag_question where site.site_name='bicycles' and tag.name='headlights' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-036.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='startupscript' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-037.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='swagger' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-038.sql
  select count(*) from tag, site, question, tag_question where site.site_name='islam' and tag.name='sharia' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-039.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='dynamics-ax-2012-r3' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-040.sql
  select count(*) from tag, site, question, tag_question where site.site_name='computergraphics' and tag.name='algorithm' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-041.sql
  select count(*) from tag, site, question, tag_question where site.site_name='islam' and tag.name='clothing' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-042.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='rowid' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-043.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='controlsfx' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-044.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='offline-caching' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-045.sql
  select count(*) from tag, site, question, tag_question where site.site_name='superuser' and tag.name='oem' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-046.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='symfony-components' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-047.sql
  select count(*) from tag, site, question, tag_question where site.site_name='tex' and tag.name='strings' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-048.sql
  select count(*) from tag, site, question, tag_question where site.site_name='math' and tag.name='quadratic-residues' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-049.sql
  select count(*) from tag, site, question, tag_question where site.site_name='superuser' and tag.name='rules' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-050.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='faceted-search' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-051.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='dynamics-ax-2012-r2' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-052.sql
  select count(*) from tag, site, question, tag_question where site.site_name='security' and tag.name='url' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-053.sql
  select count(*) from tag, site, question, tag_question where site.site_name='askubuntu' and tag.name='.profile' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-054.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='microsoft-edge' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-055.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='susy-sass' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-056.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='fade' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-057.sql
  select count(*) from tag, site, question, tag_question where site.site_name='electronics' and tag.name='multiplier' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-058.sql
  select count(*) from tag, site, question, tag_question where site.site_name='sharepoint' and tag.name='task-list' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-059.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='android-actionbar' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-060.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='make-shared' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-061.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='rx-android' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-062.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='stomp' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-063.sql
  select count(*) from tag, site, question, tag_question where site.site_name='music' and tag.name='sight-reading' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-064.sql
  select count(*) from tag, site, question, tag_question where site.site_name='money' and tag.name='college' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-065.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='filenet-content-engine' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-066.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='beautifulsoup' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-067.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='vb6' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-068.sql
  select count(*) from tag, site, question, tag_question where site.site_name='askubuntu' and tag.name='apt' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-069.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='module' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-070.sql
  select count(*) from tag, site, question, tag_question where site.site_name='math' and tag.name='ring-theory' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-071.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='scope' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-072.sql
  select count(*) from tag, site, question, tag_question where site.site_name='askubuntu' and tag.name='drivers' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-073.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='msbuild' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-074.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='xamarin.forms' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-075.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='concurrency' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-076.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='struts2' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-077.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='azure-devops' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-078.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='hashmap' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-079.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='service' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-080.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='iterator' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-081.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='mapreduce' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-082.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='datatable' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-083.sql
  select count(*) from tag, site, question, tag_question where site.site_name='codereview' and tag.name='c#' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-084.sql
  select count(*) from tag, site, question, tag_question where site.site_name='serverfault' and tag.name='ubuntu' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-085.sql
  select count(*) from tag, site, question, tag_question where site.site_name='mathoverflow' and tag.name='nt.number-theory' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-086.sql
  select count(*) from tag, site, question, tag_question where site.site_name='physics' and tag.name='quantum-field-theory' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-087.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='architecture' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-088.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='delegates' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-089.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='redux' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-090.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='ado.net' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-091.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='geometry' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-092.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='mfc' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-093.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='combobox' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-094.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='flutter' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-095.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='google-drive-api' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-096.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='jquery' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-097.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='android' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-098.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='java' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-099.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='python' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
--- q1-100.sql
  select count(*) from tag, site, question, tag_question where site.site_name='stackoverflow' and tag.name='c#' and tag.site_id = site.site_id and question.site_id = site.site_id and tag_question.site_id = site.site_id and tag_question.question_id = question.id and tag_question.tag_id = tag.id
-
