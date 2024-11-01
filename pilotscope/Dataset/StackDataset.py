@@ -13,6 +13,8 @@ class StackDataset(BaseDataset):
   """
   data_location_dict = {DatabaseEnum.POSTGRESQL: ["https://www.dropbox.com/s/55bxfhilcu19i33/so_pg13?dl=1"], DatabaseEnum.SPARK: None}
   sub_dir = "Stack"
+  train_sql_file = "stack_train.txt"
+  test_sql_file = "stack_test.txt"
   now_path = os.path.join(os.path.dirname(__file__), sub_dir)
   file_db_type = DatabaseEnum.POSTGRESQL
   
