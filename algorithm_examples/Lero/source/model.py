@@ -13,7 +13,7 @@ from tcnn.module import ConvTree, ActivationTreeWrap, LayerNormTree, DynamicPool
 from tcnn.util import prepare_trees
 from tqdm import tqdm
 CUDA = torch.cuda.is_available()
-GPU_LIST = [0, 1, 2, 3, 4, 5, 6, 7]
+GPU_LIST = [0]
 
 torch.set_default_tensor_type(torch.DoubleTensor)
 device = torch.device("cuda:0" if CUDA else "cpu")
