@@ -38,7 +38,7 @@ USER pilotscope
 WORKDIR ${USER_HOME}
 
 ####### Install PilotScope Core #######
-RUN git -c http.sslVerify=false clone --depth 1 --branch master https://github.com/alibaba/pilotscope.git PilotScopeCore
+RUN git -c http.sslVerify=false clone --depth 1 --branch master https://github.com/jothamwong/pilotscope.git PilotScopeCore
 # Install Miniconda
 RUN mkdir -p ${CONDA_DIR} && \
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ${CONDA_DIR}/miniconda.sh && \
@@ -57,7 +57,7 @@ RUN source ${CONDA_DIR}/bin/activate pilotscope && \
 
 ####### Install PostgreSQL #######
 RUN if [ "$enable_postgresql" = "true" ]; then \
-    git -c http.sslVerify=false clone --depth 1 --branch pilotscope-postgresql https://github.com/alibaba/pilotscope.git PilotScopePostgreSQL && \
+    git -c http.sslVerify=false clone --depth 1 --branch pilotscope-postgresql https://github.com/jothamwong/pilotscope.git PilotScopePostgreSQL && \
     cd ./PilotScopePostgreSQL && \
     ./configure --prefix=$PG_PATH --enable-depend --enable-cassert --enable-debug CFLAGS="-ggdb -O0" && \
     make && make install && \
@@ -83,7 +83,7 @@ RUN if [ "$enable_postgresql" = "true" ]; then \
 
 RUN if [ "$enable_spark" = "true" ]; then \
     # Download and install PilotScope patch for Spark
-    git -c http.sslVerify=false clone --depth 1 --branch pilotscope-spark https://github.com/alibaba/pilotscope.git PilotScopeSpark && \
+    git -c http.sslVerify=false clone --depth 1 --branch pilotscope-spark https://github.com/jothamwong/pilotscope.git PilotScopeSpark && \
     cd ./PilotScopeSpark && \
     # Download Spark
     wget https://archive.apache.org/dist/spark/spark-3.3.2/spark-3.3.2.tgz && \
