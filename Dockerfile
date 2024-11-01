@@ -37,6 +37,7 @@ RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/
 USER pilotscope
 WORKDIR ${USER_HOME}
 
+
 # Install Miniconda
 RUN mkdir -p ${CONDA_DIR} && \
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ${CONDA_DIR}/miniconda.sh && \
@@ -116,6 +117,9 @@ RUN if [ "$enable_spark" = "true" ]; then \
 
 ####### Install PilotScope Core #######
 RUN git -c http.sslVerify=false clone --depth 1 --branch master https://github.com/jothamwong/pilotscope.git PilotScopeCore
+
+# Create pilotscope_data directory
+RUN mkdir -p ${USER_HOME}/.local/share/pilotscope_data
 
 # Install libraries
 RUN source ${CONDA_DIR}/bin/activate pilotscope && \
