@@ -37,8 +37,6 @@ RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/
 USER pilotscope
 WORKDIR ${USER_HOME}
 
-####### Install PilotScope Core #######
-RUN git -c http.sslVerify=false clone --depth 1 --branch master https://github.com/jothamwong/pilotscope.git PilotScopeCore
 # Install Miniconda
 RUN mkdir -p ${CONDA_DIR} && \
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ${CONDA_DIR}/miniconda.sh && \
@@ -48,12 +46,6 @@ RUN mkdir -p ${CONDA_DIR} && \
 RUN conda create --name pilotscope python=3.8
 
 RUN conda init
-
-# Install libraries
-RUN source ${CONDA_DIR}/bin/activate pilotscope && \
-    cd ./PilotScopeCore && \
-    pip install -e . -i https://mirrors.aliyun.com/pypi/simple/   && \
-    pip install -e '.[dev]' -i https://mirrors.aliyun.com/pypi/simple/
 
 ####### Install PostgreSQL #######
 RUN if [ "$enable_postgresql" = "true" ]; then \
@@ -121,5 +113,14 @@ RUN if [ "$enable_spark" = "true" ]; then \
     ; else \
     echo "Spark installation skipped"; \
     fi
+
+####### Install PilotScope Core #######
+RUN git -c http.sslVerify=false clone --depth 1 --branch master https://github.com/jothamwong/pilotscope.git PilotScopeCore
+
+# Install libraries
+RUN source ${CONDA_DIR}/bin/activate pilotscope && \
+    cd ./PilotScopeCore && \
+    pip install -e . -i https://mirrors.aliyun.com/pypi/simple/   && \
+    pip install -e '.[dev]' -i https://mirrors.aliyun.com/pypi/simple/
 
 CMD ["/bin/bash"]
