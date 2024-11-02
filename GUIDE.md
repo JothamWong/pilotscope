@@ -8,7 +8,7 @@
 Host pilotscope
 	User pilotscope
 	Hostname 0.tcp.ap.ngrok.io
-	Port 17689
+	Port 11448
 ```
 
 2. Log into the server with the command:
