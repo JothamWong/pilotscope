@@ -8,6 +8,7 @@ from pilotscope.Dataset.ImdbTinyDataset import ImdbTinyDataset
 from pilotscope.Dataset.StatsDataset import StatsDataset
 from pilotscope.Dataset.StatsTinyDataset import StatsTinyDataset
 from pilotscope.Dataset.TpcdsDataset import TpcdsDataset
+from pilotscope.Dataset.StackDataset import StackDataset
 from pilotscope.Factory.DBControllerFectory import DBControllerFactory
 from pilotscope.PilotConfig import PostgreSQLConfig
 from pilotscope.PilotEnum import DatabaseEnum
@@ -97,6 +98,8 @@ class TestDataset(unittest.TestCase):
         ds = TpcdsDataset(DatabaseEnum.POSTGRESQL)
         test_dataset(ds)
         ds = TpcdsDataset(DatabaseEnum.SPARK)
+        test_dataset(ds)
+        ds = StackDataset(DatabaseEnum.POSTGRESQL)
         test_dataset(ds)
         print("test_get_sql done")
 
