@@ -59,28 +59,6 @@ class BaoHintPushHandler(HintPushHandler):
                     for i in range(len(self.ARMS_OPTION))
                 ]
                 pass
-            elif db_type == DatabaseEnum.SPARK:
-                self.ALL_OPTIONS = [
-                    "spark.sql.cbo.enabled",
-                    "spark.sql.join.preferSortMergeJoin",
-                    "spark.sql.adaptive.skewJoin.enabled",
-                    "spark.sql.codegen.wholeStag",
-                    "spark.sql.cbo.joinReorder.enabled  ",
-                    "spark.sql.sources.bucketing.autoBucketedScan.enabled",
-                ]
-                self.ARMS_OPTION = [
-                    63,
-                    62,
-                    43,
-                    42,
-                    59,
-                ]  # each arm's option in binary format
-                self.arms_hint2val = [
-                    self.arm_idx_to_hint2val(
-                        i, self.ARMS_OPTION, self.ALL_OPTIONS, ["false", "true"]
-                    )
-                    for i in range(len(self.ARMS_OPTION))
-                ]
             else:
                 raise NotImplementedError
 
@@ -103,7 +81,6 @@ class BaoHintPushHandler(HintPushHandler):
         return self.model.model.predict(plans)
 
     def acquire_injected_data(self, sql):
-        sql = modify_sql_for_spark(self.config, sql)
         try:
             TimeStatistic.start("AI")
             # with ThreadPoolExecutor(max_workers=len(self.bao_hint.arms_hint2val)) as pool:
@@ -117,12 +94,6 @@ class BaoHintPushHandler(HintPushHandler):
 
             origin_plans = plans
             plans = []
-            if self.config.db_type == DatabaseEnum.SPARK:
-                for plan in origin_plans:
-                    plan = to_tree_json(plan)
-                    compress = SparkPlanCompress()
-                    plan["Plan"] = compress.compress(plan["Plan"])
-                    plans.append(plan)
 
             TimeStatistic.start("Predict")
             est_exe_time = self.model.model.predict(plans)
@@ -177,7 +148,6 @@ class BaoPretrainingModelEvent(PretrainingModelEvent):
         column_2_value_list = []
 
         sql = self.sqls[self.cur_sql_idx]
-        sql = modify_sql_for_spark(self.config, sql)
 
         print(
             "current  is {}-th sql, and total sqls is {}".format(
@@ -212,7 +182,6 @@ class BaoPretrainingModelEvent(PretrainingModelEvent):
         bao_model = BaoRegression(
             verbose=True,
             have_cache_data=self._model.have_cache_data,
-            is_spark=self.config.db_type == DatabaseEnum.SPARK,
         )
         new_plans, new_times = self.filter(data["plan"].values, data["time"].values)
         bao_model.fit(new_plans, new_times)
@@ -227,12 +196,6 @@ class BaoPretrainingModelEvent(PretrainingModelEvent):
                 self.config.db_type == DatabaseEnum.POSTGRESQL
                 and not self.contain_outlier_plan(plan)
             ):
-                new_plans.append(plan)
-                new_times.append(times[i])
-            elif self.config.db_type == DatabaseEnum.SPARK:
-                plan = to_tree_json(plan)
-                compress = SparkPlanCompress()
-                plan["Plan"] = compress.compress(plan["Plan"])
                 new_plans.append(plan)
                 new_times.append(times[i])
         return new_plans, new_times
