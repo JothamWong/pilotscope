@@ -166,7 +166,7 @@ class LeroModel():
         optimizer = None
         if CUDA:
             optimizer = torch.optim.Adam(self._net.module.parameters())
-            optimizer = nn.DataParallel(optimizer, device_ids=GPU_LIST)
+            # optimizer = nn.DataParallel(optimizer, device_ids=GPU_LIST)
         else:
             optimizer = torch.optim.Adam(self._net.parameters())
 
@@ -190,9 +190,9 @@ class LeroModel():
                 loss_accum += loss.item()
 
                 if CUDA:
-                    optimizer.module.zero_grad()
+                    optimizer.zero_grad()
                     loss.backward()
-                    optimizer.module.step()
+                    optimizer.step()
                 else:
                     optimizer.zero_grad()
                     loss.backward()
@@ -263,7 +263,7 @@ class LeroModelPairWise(LeroModel):
         optimizer = None
         if CUDA:
             optimizer = torch.optim.Adam(self._net.parameters())
-            optimizer = nn.DataParallel(optimizer, device_ids=GPU_LIST)
+            # optimizer = nn.DataParallel(optimizer, device_ids=GPU_LIST)
         else:
             optimizer = torch.optim.Adam(self._net.parameters())
 
@@ -298,9 +298,9 @@ class LeroModelPairWise(LeroModel):
                 loss_accum += loss.item()
 
                 if CUDA:
-                    optimizer.module.zero_grad()
+                    optimizer.zero_grad()
                     loss.backward()
-                    optimizer.module.step()
+                    optimizer.step()
                 else:
                     optimizer.zero_grad()
                     loss.backward()
