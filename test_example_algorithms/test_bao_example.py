@@ -1,36 +1,36 @@
+import unittest
 from concurrent.futures.thread import ThreadPoolExecutor
-from pilotscope.Common.Util import pilotscope_exit
-from pilotscope.Common.TimeStatistic import TimeStatistic
-from pandas import DataFrame
+
+from algorithm_examples.Bao.BaoPilotModel import BaoPilotModel
+from algorithm_examples.Bao.source.model import BaoRegression
 from algorithm_examples.ExampleConfig import (
     get_time_statistic_img_path,
     get_time_statistic_xlsx_file_path,
 )
-import unittest
-from pilotscope.Common.Drawer import Drawer
 from algorithm_examples.utils import (
-    load_training_sql,
-    load_test_sql,
-    to_tree_json,
     json_str_to_json_obj,
+    load_test_sql,
+    load_training_sql,
 )
-
-from pilotscope.Factory.SchedulerFactory import SchedulerFactory
+from pandas import DataFrame
+from pilotscope.Anchor.BaseAnchor.BasePushHandler import HintPushHandler
+from pilotscope.Common.Drawer import Drawer
+from pilotscope.Common.TimeStatistic import TimeStatistic
 from pilotscope.Common.Util import (
+    pilotscope_exit,
     wait_futures_results,
 )
-from pilotscope.PilotScheduler import PilotScheduler
-from pilotscope.PilotConfig import PostgreSQLConfig
 from pilotscope.DataManager.DataManager import DataManager
 from pilotscope.DBController.BaseDBController import BaseDBController
-from pilotscope.PilotEvent import PretrainingModelEvent
 from pilotscope.DBInteractor.PilotDataInteractor import PilotDataInteractor
-from pilotscope.PilotTransData import PilotTransData
-from pilotscope.PilotEnum import DatabaseEnum
 from pilotscope.Factory.DBControllerFectory import DBControllerFactory
-from pilotscope.PilotConfig import PilotConfig
+from pilotscope.Factory.SchedulerFactory import SchedulerFactory
+from pilotscope.PilotConfig import PilotConfig, PostgreSQLConfig
+from pilotscope.PilotEnum import DatabaseEnum
+from pilotscope.PilotEvent import PretrainingModelEvent
 from pilotscope.PilotModel import PilotModel
-from pilotscope.Anchor.BaseAnchor.BasePushHandler import HintPushHandler
+from pilotscope.PilotScheduler import PilotScheduler
+from pilotscope.PilotTransData import PilotTransData
 
 
 class BaoHintPushHandler(HintPushHandler):
@@ -216,12 +216,7 @@ class BaoPretrainingModelEvent(PretrainingModelEvent):
 
 class BaoTest(unittest.TestCase):
     def setUp(self):
-        self.config: PostgreSQLConfig = PostgreSQLConfig(
-            db_host="localhost",
-            db_port="5432",
-            db_user="postgres",
-            db_user_pwd="postgres",
-        )
+        self.config = PostgreSQLConfig()
         self.config.db = "stats_tiny"
 
         self.used_cache = False
@@ -250,7 +245,7 @@ class BaoTest(unittest.TestCase):
             bao_pilot_model: BaoPilotModel = BaoPilotModel(
                 self.model_name, have_cache_data=self.used_cache
             )
-            bao_pilot_model.load()
+            bao_pilot_model.load_model()
             bao_handler = BaoHintPushHandler(bao_pilot_model, config)
 
             # core
@@ -293,3 +288,7 @@ class BaoTest(unittest.TestCase):
             print("run ok")
         finally:
             pilotscope_exit()
+
+
+if __name__ == "__main__":
+    unittest.main()
