@@ -3,9 +3,9 @@ import time
 import psycopg2
 import json
 
-import storage
-from common import BaoException
-from config import read_config
+from . import storage
+from .common import BaoException
+from .config import read_config
 
 # Code to block models that would create query regressions on important queries.
 # The basic methodology is to allow the user to submit the SQL of important queries,

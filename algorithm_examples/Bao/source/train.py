@@ -1,8 +1,6 @@
-import storage
-import model
 import os
 import shutil
-import reg_blocker
+from . import storage, model,  reg_blocker
 
 class BaoTrainingException(Exception):
     pass

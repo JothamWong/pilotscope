@@ -4,13 +4,9 @@ import struct
 import sys
 import time
 import os
-import storage
-import model
-import train
-import baoctl
 import math
-import reg_blocker
-from constants import (PG_OPTIMIZER_INDEX, DEFAULT_MODEL_PATH,
+from . import storage, model, reg_blocker, train, baoctl
+from .constants import (PG_OPTIMIZER_INDEX, DEFAULT_MODEL_PATH,
                        OLD_MODEL_PATH, TMP_MODEL_PATH)
 
 def add_buffer_info_to_plans(buffer_info, plans):
